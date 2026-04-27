@@ -1,0 +1,90 @@
+{
+  "variants": {
+    "facing=north,pile_size=pile_2": [
+      { "model": "danylo-decor:block/books/books_pile_2"},
+      { "model": "danylo-decor:block/books/books_pile_2_v2"}
+    ],
+    "facing=north,pile_size=pile_4": [
+      { "model": "danylo-decor:block/books/books_pile_4"},
+      { "model": "danylo-decor:block/books/books_pile_4_v2"}
+    ],
+    "facing=north,pile_size=pile_6": [
+      { "model": "danylo-decor:block/books/books_pile_6"}
+    ],
+    "facing=north,pile_size=pile_8": [
+      { "model": "danylo-decor:block/books/books_pile_8"},
+      { "model": "danylo-decor:block/books/books_pile_8_v2"},
+      { "model": "danylo-decor:block/books/books_pile_8_v3"}
+    ],
+    "facing=north,pile_size=pile_8_1v": [
+      { "model": "danylo-decor:block/books/books_pile_8_1v"},
+      { "model": "danylo-decor:block/books/books_pile_8_1v_v2"}
+    ],
+
+
+    "facing=east,pile_size=pile_2": [
+      { "model": "danylo-decor:block/books/books_pile_2", "y": 90 },
+      { "model": "danylo-decor:block/books/books_pile_2_v2", "y": 90 }
+    ],
+    "facing=east,pile_size=pile_4": [
+      { "model": "danylo-decor:block/books/books_pile_4", "y": 90 },
+      { "model": "danylo-decor:block/books/books_pile_4_v2", "y": 90 }
+    ],
+    "facing=east,pile_size=pile_6": [
+      { "model": "danylo-decor:block/books/books_pile_6", "y": 90}
+    ],
+    "facing=east,pile_size=pile_8": [
+      { "model": "danylo-decor:block/books/books_pile_8", "y": 90},
+      { "model": "danylo-decor:block/books/books_pile_8_v2", "y": 90},
+      { "model": "danylo-decor:block/books/books_pile_8_v3", "y": 90}
+    ],
+    "facing=east,pile_size=pile_8_1v": [
+      { "model": "danylo-decor:block/books/books_pile_8_1v", "y": 90 },
+      { "model": "danylo-decor:block/books/books_pile_8_1v_v2", "y": 90 }
+    ],
+
+
+    "facing=south,pile_size=pile_2": [
+      { "model": "danylo-decor:block/books/books_pile_2", "y": 180 },
+      { "model": "danylo-decor:block/books/books_pile_2_v2", "y": 180 }
+    ],
+    "facing=south,pile_size=pile_4": [
+      { "model": "danylo-decor:block/books/books_pile_4", "y": 180 },
+      { "model": "danylo-decor:block/books/books_pile_4_v2", "y": 180 }
+    ],
+    "facing=south,pile_size=pile_6": [
+      { "model": "danylo-decor:block/books/books_pile_6", "y": 180}
+    ],
+    "facing=south,pile_size=pile_8": [
+      { "model": "danylo-decor:block/books/books_pile_8", "y": 180},
+      { "model": "danylo-decor:block/books/books_pile_8_v2", "y": 180},
+      { "model": "danylo-decor:block/books/books_pile_8_v3", "y": 180}
+    ],
+    "facing=south,pile_size=pile_8_1v": [
+      { "model": "danylo-decor:block/books/books_pile_8_1v", "y": 180 },
+      { "model": "danylo-decor:block/books/books_pile_8_1v_v2", "y": 180 }
+    ],
+
+
+    "facing=west,pile_size=pile_2": [
+      { "model": "danylo-decor:block/books/books_pile_2", "y": 270 },
+      { "model": "danylo-decor:block/books/books_pile_2_v2", "y": 270 }
+    ],
+    "facing=west,pile_size=pile_4": [
+      { "model": "danylo-decor:block/books/books_pile_4", "y": 270 },
+      { "model": "danylo-decor:block/books/books_pile_4_v2", "y": 270 }
+    ],
+    "facing=west,pile_size=pile_6": [
+      { "model": "danylo-decor:block/books/books_pile_6", "y": 270}
+    ],
+    "facing=west,pile_size=pile_8": [
+      { "model": "danylo-decor:block/books/books_pile_8", "y": 270},
+      { "model": "danylo-decor:block/books/books_pile_8_v2", "y": 270},
+      { "model": "danylo-decor:block/books/books_pile_8_v3", "y": 270}
+    ],
+    "facing=west,pile_size=pile_8_1v": [
+      { "model": "danylo-decor:block/books/books_pile_8_1v", "y": 270 },
+      { "model": "danylo-decor:block/books/books_pile_8_1v_v2", "y": 270 }
+    ]
+  }
+}
