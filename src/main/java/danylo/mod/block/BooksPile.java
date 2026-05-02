@@ -2,6 +2,8 @@ package danylo.mod.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -94,8 +96,7 @@ public class BooksPile extends CustomDirectionalBlock {
             level.setBlockAndUpdate(blockPos, blockState.setValue(PILE_SIZE, pile_size));
 
 
-            // Play a click sound to emphasize the interaction.
-//            level.playSound(player, pos, SoundEvents.COMPARATOR_CLICK, SoundSource.BLOCKS, 1.0F, 1.0F);
+            level.playSound(player, blockPos, SoundEvents.CANDLE_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
 
             return InteractionResult.SUCCESS;
         }

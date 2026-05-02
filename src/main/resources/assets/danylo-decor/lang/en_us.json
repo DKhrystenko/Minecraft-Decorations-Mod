@@ -2,5 +2,6 @@
   "danylo-decor.DanyloTabName": "Danylo's Decorations",
   "block.danylo-decor.books": "Pile of books",
   "block.danylo-decor.tile" : "Floor tile",
-  "block.danylo-decor.brick" : "Wall Foundation Brick"
+  "block.danylo-decor.brick" : "Wall Foundation Brick",
+  "block.danylo-decor.wall_lamp": "Yellow Wall Lamp"
 }

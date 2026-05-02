@@ -22,6 +22,7 @@ public class DecorModCreativeTab {
                 output.accept(ModBlocks.TILE);
                 output.accept(ModBlocks.BRICK);
                 output.accept(ModBlocks.BOOKS);
+                output.accept(ModBlocks.WALL_LAMP);
 
 
                 // And custom ItemStacks

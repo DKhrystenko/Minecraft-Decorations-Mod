@@ -1,0 +1,29 @@
+{
+  "variants": {
+    "facing=north,activated=true": {
+      "model": "danylo-decor:block/wall_lamp_on"
+    },
+    "facing=east,activated=true": {
+      "model": "danylo-decor:block/wall_lamp_on", "y": 90
+    },
+    "facing=south,activated=true": {
+      "model": "danylo-decor:block/wall_lamp_on", "y": 180
+    },
+    "facing=west,activated=true": {
+      "model": "danylo-decor:block/wall_lamp_on", "y": 270
+    },
+
+    "facing=north,activated=false": {
+      "model": "danylo-decor:block/wall_lamp_off"
+    },
+    "facing=east,activated=false": {
+      "model": "danylo-decor:block/wall_lamp_off", "y": 90
+    },
+    "facing=south,activated=false": {
+      "model": "danylo-decor:block/wall_lamp_off", "y": 180
+    },
+    "facing=west,activated=false": {
+      "model": "danylo-decor:block/wall_lamp_off", "y": 270
+    }
+  }
+}

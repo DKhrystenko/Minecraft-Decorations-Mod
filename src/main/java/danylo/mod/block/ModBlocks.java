@@ -33,11 +33,19 @@ public class ModBlocks {
             true
     );
 
-    // SlabBlock to change collision, .noOcclusion() forces to render the texture's bottom (without it the bottom is transparent)
+
+    // .noOcclusion() forces to render the texture's bottom (without it the bottom is transparent)
     public static final Block BOOKS = register(
             "books",
             (props) -> new BooksPile(BooksPile.DEFAULT_BOX, props),
             BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
+            true
+    );
+
+    public static final Block WALL_LAMP = register(
+            "wall_lamp",
+            (props) -> new WallLamp(WallLamp.DEFAULT_BOX, props),
+            BlockBehaviour.Properties.of().sound(SoundType.GLASS).noOcclusion().lightLevel(WallLamp::getLuminance),
             true
     );
 
