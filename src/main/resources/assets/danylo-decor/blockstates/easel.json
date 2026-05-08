@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model":"danylo-decor:block/easel_with_canvas"},
+    "facing=east": {"model":"danylo-decor:block/easel_with_canvas", "y":90},
+    "facing=south": {"model":"danylo-decor:block/easel_with_canvas", "y":180},
+    "facing=west": {"model":"danylo-decor:block/easel_with_canvas", "y":270}
+  }
+}

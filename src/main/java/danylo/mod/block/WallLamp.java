@@ -5,12 +5,10 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -20,8 +18,8 @@ public class WallLamp extends CustomDirectionalBlock {
     public static final VoxelShape DEFAULT_BOX = Block.box(4, 7, 0, 13, 15, 7);
     public static final BooleanProperty ACTIVATED = BooleanProperty.create("activated");
 
-    public WallLamp(VoxelShape shape, Properties properties) {
-        super(shape, properties);
+    public WallLamp(CustomDirectionalBlock.Builder builder) {
+        super(builder);
 
         registerDefaultState(defaultBlockState().setValue(ACTIVATED, false));
     }
@@ -64,12 +62,5 @@ public class WallLamp extends CustomDirectionalBlock {
 
         // Return a light level if activated = true
         return activated ? 12 : 0;
-    }
-
-    @Override
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return this.defaultBlockState()
-                .setValue(BlockStateProperties.HORIZONTAL_FACING,
-                        context.getHorizontalDirection()); // no .getOpposite()
     }
 }

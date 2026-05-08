@@ -58,8 +58,8 @@ public class BooksPile extends CustomDirectionalBlock {
     private static final VoxelShape PILE_8_1v_BOX = Block.box(1, 0, 0, 13, 16, 16);
 
 
-    public BooksPile(VoxelShape shape, Properties properties) {
-        super(shape, properties);
+    public BooksPile(CustomDirectionalBlock.Builder builder) {
+        super(builder);
         registerDefaultState(defaultBlockState().setValue(PILE_SIZE, PileSize.PILE_OF_2));
     }
 
@@ -78,7 +78,7 @@ public class BooksPile extends CustomDirectionalBlock {
         ItemStack stack = player.getItemInHand(interactionHand);
 
         if (!player.getAbilities().mayBuild || !stack.is(ModBlocks.BOOKS.asItem())) {
-            // Skip if the player isn't allowed to modify the level or the item in hand isn't instance of BOOKS
+            // Skip if the player isn't allowed to modify or the item in hand isn't instance of BOOKS
             return InteractionResult.PASS;
         } else {
             // Get the current value of the "pile_size" property
