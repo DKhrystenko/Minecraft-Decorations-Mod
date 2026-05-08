@@ -24,13 +24,6 @@ public class DecorModCreativeTab {
                 output.accept(ModBlocks.BOOKS);
                 output.accept(ModBlocks.WALL_LAMP);
                 output.accept(ModBlocks.EASEL);
-
-
-                // And custom ItemStacks
-//                ItemStack stack = new ItemStack(Items.SEA_PICKLE);
-//                stack.set(DataComponents.ITEM_NAME, Component.literal("Pickle Rick"));
-//                stack.set(DataComponents.LORE, new ItemLore(List.of(Component.literal("I'm pickle riiick!!"))));
-//                output.accept(stack);
             })
             .build();
 

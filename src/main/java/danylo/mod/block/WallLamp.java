@@ -34,7 +34,7 @@ public class WallLamp extends CustomDirectionalBlock {
             // Get the current value of the "activated" property
             boolean activated = state.getValue(ACTIVATED);
 
-            // Flip the value of activated and save the new blockstate
+            // Flip the value of activated and save the new block state
             level.setBlockAndUpdate(pos, state.setValue(ACTIVATED, !activated));
 
             // Different sound for switch on/off

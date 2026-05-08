@@ -61,6 +61,7 @@ public class ModBlocks {
 
     public static void initialize() {}
 
+    @SuppressWarnings("SameParameterValue")
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
         // Create a registry key for the block
         ResourceKey<Block> blockKey = keyOfBlock(name);
