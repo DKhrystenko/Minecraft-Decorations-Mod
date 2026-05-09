@@ -15,18 +15,46 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 
 /**
- * Blocks which have direction property and can be given custom collision boxes. The collision box rotates together
+ * Blocks which have direction and can be given custom collision boxes. The collision box rotates together
  * with the direction.
  */
 public class CustomDirectionalBlock extends Block {
-    protected final VoxelShape shape;
-    private final Direction defaultDirection = Direction.NORTH;
+    private static final Direction DEFAULT_DIRECTION = Direction.NORTH;
+    private final VoxelShape shape;
+    private final boolean faceTowardsPlayer;
 
-    public CustomDirectionalBlock(VoxelShape shape, BlockBehaviour.Properties properties) {
-        super(properties);
-        this.shape = shape;
-        // Set the default state with NORTH facing
-        registerDefaultState(defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, defaultDirection));
+
+    protected CustomDirectionalBlock(Builder builder) {
+        super(builder.properties);
+        this.shape = builder.shape;
+        this.faceTowardsPlayer = builder.faceTowardsPlayer;
+    }
+
+    public static Builder builder(BlockBehaviour.Properties properties, VoxelShape shape) {
+        return new Builder(properties, shape);
+    }
+
+    public static class Builder {
+        // Future blocks might need new properties and builder allows to add them without breaking the old blocks
+
+        private final BlockBehaviour.Properties properties;
+        private final VoxelShape shape;
+        private boolean faceTowardsPlayer = false;
+
+        protected Builder(BlockBehaviour.Properties properties, VoxelShape shape) {
+            this.properties = properties;
+            this.shape = shape;
+        }
+
+        public Builder faceTowardsPlayer() {
+            this.faceTowardsPlayer = true;
+            return this;
+        }
+
+        public CustomDirectionalBlock build() {
+            return new CustomDirectionalBlock(this);
+        }
+
     }
 
 
@@ -37,7 +65,7 @@ public class CustomDirectionalBlock extends Block {
     @Override
     public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         Direction facing = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
-        return ShapeHelper.rotateShape(defaultDirection, facing, this.shape);
+        return ShapeHelper.rotateShape(DEFAULT_DIRECTION, facing, this.shape);
     }
 
     @Override
@@ -48,10 +76,12 @@ public class CustomDirectionalBlock extends Block {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        // setting the blockState of this instance to the opposite of horizontal direction of the player when the block was placed
-        return this.defaultBlockState()
-                .setValue(BlockStateProperties.HORIZONTAL_FACING,
-                        context.getHorizontalDirection().getOpposite());
-    }
+        Direction blockDirection = context.getHorizontalDirection();  // facing towards player
 
+        if (!this.faceTowardsPlayer) {
+            blockDirection = blockDirection.getOpposite();  // change to facing from the player
+        }
+
+        return this.defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, blockDirection);
+    }
 }

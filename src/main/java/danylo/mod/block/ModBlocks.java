@@ -10,6 +10,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.function.Function;
 
@@ -37,21 +38,30 @@ public class ModBlocks {
     // .noOcclusion() forces to render the texture's bottom (without it the bottom is transparent)
     public static final Block BOOKS = register(
             "books",
-            (props) -> new BooksPile(BooksPile.DEFAULT_BOX, props),
+            (props) -> new BooksPile(CustomDirectionalBlock.builder(props, BooksPile.DEFAULT_BOX)),
             BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
             true
     );
 
     public static final Block WALL_LAMP = register(
             "wall_lamp",
-            (props) -> new WallLamp(WallLamp.DEFAULT_BOX, props),
+            (props) -> new WallLamp(CustomDirectionalBlock.builder(props, WallLamp.DEFAULT_BOX).faceTowardsPlayer()),
             BlockBehaviour.Properties.of().sound(SoundType.GLASS).noOcclusion().lightLevel(WallLamp::getLuminance),
+            true
+    );
+
+    public static final VoxelShape EASEL_BOX = Block.box(0, 0, 0, 16, 32, 16);
+    public static final Block EASEL = register(
+            "easel",
+            (props) -> CustomDirectionalBlock.builder(props, EASEL_BOX).faceTowardsPlayer().build(),
+            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
             true
     );
 
 
     public static void initialize() {}
 
+    @SuppressWarnings("SameParameterValue")
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
         // Create a registry key for the block
         ResourceKey<Block> blockKey = keyOfBlock(name);

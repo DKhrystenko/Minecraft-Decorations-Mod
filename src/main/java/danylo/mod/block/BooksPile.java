@@ -28,8 +28,8 @@ import org.jetbrains.annotations.NotNull;
  */
 public class BooksPile extends CustomDirectionalBlock {
 
-    // Local enum (used only in this class)
-    public enum PileSize implements StringRepresentable {
+    // Local enum with pile sizes
+    private enum PileSize implements StringRepresentable {
         PILE_OF_2("pile_2"),
         PILE_OF_4("pile_4"),
         PILE_OF_6("pile_6"),
@@ -48,7 +48,7 @@ public class BooksPile extends CustomDirectionalBlock {
         }
     }
 
-    public static final EnumProperty<PileSize> PILE_SIZE = EnumProperty.create("pile_size", PileSize.class);
+    private static final EnumProperty<PileSize> PILE_SIZE = EnumProperty.create("pile_size", PileSize.class);
 
     public static final VoxelShape DEFAULT_BOX = Block.box(1, 0, 0, 13, 4, 13); // same as stage 1
     private static final VoxelShape PILE_2_BOX = DEFAULT_BOX;
@@ -58,8 +58,9 @@ public class BooksPile extends CustomDirectionalBlock {
     private static final VoxelShape PILE_8_1v_BOX = Block.box(1, 0, 0, 13, 16, 16);
 
 
-    public BooksPile(VoxelShape shape, Properties properties) {
-        super(shape, properties);
+    public BooksPile(CustomDirectionalBlock.Builder builder) {
+        super(builder);
+
         registerDefaultState(defaultBlockState().setValue(PILE_SIZE, PileSize.PILE_OF_2));
     }
 
@@ -71,14 +72,14 @@ public class BooksPile extends CustomDirectionalBlock {
     }
 
     /**
-     * On every RMB click changes the stage(1-4), which is used to display different models(smaller to large books pile)
+     * On every RMB click changes the stage, which is used to display different models(small to large piles)
      */
     @Override
     protected @NotNull InteractionResult useItemOn(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
         ItemStack stack = player.getItemInHand(interactionHand);
 
         if (!player.getAbilities().mayBuild || !stack.is(ModBlocks.BOOKS.asItem())) {
-            // Skip if the player isn't allowed to modify the level or the item in hand isn't instance of BOOKS
+            // Skip if the player isn't allowed to modify or the item in hand isn't instance of BOOKS
             return InteractionResult.PASS;
         } else {
             // Get the current value of the "pile_size" property
