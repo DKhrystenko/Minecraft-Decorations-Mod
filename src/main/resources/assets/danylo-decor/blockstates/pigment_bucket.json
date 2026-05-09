@@ -1,18 +1,18 @@
 {"variants": {
-    "facing=east,bucket_form=0": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket","y":90},
-    "facing=east,bucket_form=1":{"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_red","y":90},
-    "facing=east,bucket_form=2":{"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_blue","y":90},
+    "facing=east,bucket_form=0": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket", "y":90},
+    "facing=east,bucket_form=1": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_red", "y":90},
+    "facing=east,bucket_form=2": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_blue", "y":90},
   
-    "facing=north,bucket_form=0":{"model":"danylo-decor:block/pigment_bucket/pigment_bucket"},
-    "facing=north,bucket_form=1":{"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_red"},
-    "facing=north,bucket_form=2":{"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_blue"},
+    "facing=north,bucket_form=0": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket"},
+    "facing=north,bucket_form=1": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_red"},
+    "facing=north,bucket_form=2": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_blue"},
   
-    "facing=south,bucket_form=0":{"model":"danylo-decor:block/pigment_bucket/pigment_bucket","y":180},
-    "facing=south,bucket_form=1":{"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_red","y":180},
-    "facing=south,bucket_form=2":{"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_blue","y":180},
+    "facing=south,bucket_form=0": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket", "y":180},
+    "facing=south,bucket_form=1": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_red", "y":180},
+    "facing=south,bucket_form=2": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_blue", "y":180},
   
-    "facing=west,bucket_form=0":{"model":"danylo-decor:block/pigment_bucket/pigment_bucket","y":270},
-    "facing=west,bucket_form=1":{"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_red","y":270},
-    "facing=west,bucket_form=2":{"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_blue","y":270}
+    "facing=west,bucket_form=0": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket", "y":270},
+    "facing=west,bucket_form=1": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_red", "y":270},
+    "facing=west,bucket_form=2": {"model":"danylo-decor:block/pigment_bucket/pigment_bucket_single_blue", "y":270}
   }
 }
