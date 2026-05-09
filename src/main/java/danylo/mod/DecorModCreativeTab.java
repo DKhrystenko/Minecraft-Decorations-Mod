@@ -23,7 +23,10 @@ public class DecorModCreativeTab {
                 output.accept(ModBlocks.BRICK);
                 output.accept(ModBlocks.BOOKS);
                 output.accept(ModBlocks.WALL_LAMP);
-                output.accept(ModBlocks.EASEL);
+                output.accept(ModBlocks.EASEL_WITH_CANVAS);
+                output.accept(ModBlocks.EASEL_EMPTY);
+                output.accept(ModBlocks.MOUNTED_MIRROR);
+                output.accept(ModBlocks.PIGMENT_BUCKET);
             })
             .build();
 

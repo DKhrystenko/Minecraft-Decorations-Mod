@@ -1,7 +1,11 @@
 {
   "danylo-decor.DanyloTabName": "Danylo's Decorations",
-  "block.danylo-decor.books": "Pile of books",
-  "block.danylo-decor.tile" : "Floor tile",
+  "block.danylo-decor.books": "Pile of Books",
+  "block.danylo-decor.tile" : "Floor Tile",
   "block.danylo-decor.brick" : "Wall Foundation Brick",
-  "block.danylo-decor.wall_lamp": "Yellow Wall Lamp"
+  "block.danylo-decor.wall_lamp": "Yellow Wall Lamp",
+  "block.danylo-decor.easel_with_canvas": "Easel with Canvas",
+  "block.danylo-decor.easel_empty": "Empty Easel",
+  "block.danylo-decor.mounted_mirror": "Mounted Mirror",
+  "block.danylo-decor.pigment_bucket": "Pigment Bucket"
 }

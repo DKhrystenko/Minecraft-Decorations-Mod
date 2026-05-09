@@ -94,9 +94,8 @@ public class BooksPile extends CustomDirectionalBlock {
                 case PILE_OF_8_WITH_1_VERTICAL -> PileSize.PILE_OF_2;
             };
 
+
             level.setBlockAndUpdate(blockPos, blockState.setValue(PILE_SIZE, pile_size));
-
-
             level.playSound(player, blockPos, SoundEvents.CANDLE_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
 
             return InteractionResult.SUCCESS;

@@ -43,6 +43,7 @@ public class ModBlocks {
             true
     );
 
+
     public static final Block WALL_LAMP = register(
             "wall_lamp",
             (props) -> new WallLamp(CustomDirectionalBlock.builder(props, WallLamp.DEFAULT_BOX).faceTowardsPlayer()),
@@ -50,11 +51,35 @@ public class ModBlocks {
             true
     );
 
+
     public static final VoxelShape EASEL_BOX = Block.box(0, 0, 0, 16, 32, 16);
-    public static final Block EASEL = register(
-            "easel",
+    public static final Block EASEL_EMPTY = register(
+            "easel_empty",
             (props) -> CustomDirectionalBlock.builder(props, EASEL_BOX).faceTowardsPlayer().build(),
             BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
+            true
+    );
+
+    public static final Block EASEL_WITH_CANVAS = register(
+            "easel_with_canvas",
+            (props) -> CustomDirectionalBlock.builder(props, EASEL_BOX).faceTowardsPlayer().build(),
+            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
+            true
+    );
+
+    public static final VoxelShape MOUNTED_MIRROR_BOX = Block.box(2, 0, 0, 14, 15, 1);
+    public static final Block MOUNTED_MIRROR = register(
+            "mounted_mirror",
+            (props) -> CustomDirectionalBlock.builder(props, MOUNTED_MIRROR_BOX).faceTowardsPlayer().build(),
+            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
+            true
+    );
+
+
+    public static final Block PIGMENT_BUCKET = register(
+            "pigment_bucket",
+            (props) -> new PigmentBucket(CustomDirectionalBlock.builder(props, PigmentBucket.DEFAULT_BOX).faceTowardsPlayer()),
+            BlockBehaviour.Properties.of().sound(SoundType.STONE).noOcclusion(),
             true
     );
 
