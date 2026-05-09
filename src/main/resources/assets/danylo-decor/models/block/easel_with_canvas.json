@@ -1,9 +1,9 @@
 {
-
   "textures": {
     "0": "danylo-decor:block/easel/big_plank",
     "1": "danylo-decor:block/easel/illust",
-    "2": "danylo-decor:block/easel/d_rope"
+    "2": "danylo-decor:block/easel/d_rope",
+    "particle": "danylo-decor:block/easel/big_plank"
   },
   "elements": [
     {

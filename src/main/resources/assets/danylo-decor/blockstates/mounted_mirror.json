@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model":"danylo-decor:block/mounted_mirror"},
+    "facing=east": {"model":"danylo-decor:block/mounted_mirror", "y":90},
+    "facing=south": {"model":"danylo-decor:block/mounted_mirror", "y":180},
+    "facing=west": {"model":"danylo-decor:block/mounted_mirror", "y":270}
+  }
+}
