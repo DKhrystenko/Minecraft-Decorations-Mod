@@ -1,0 +1,6 @@
+{
+    "parent": "danylo-decor:block/album/1/0",
+    "textures": {
+        "2": "danylo-decor:block/album/randomized_album1/6"
+    }
+}

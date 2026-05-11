@@ -27,6 +27,7 @@ public class DecorModCreativeTab {
                 output.accept(ModBlocks.EASEL_EMPTY);
                 output.accept(ModBlocks.MOUNTED_MIRROR);
                 output.accept(ModBlocks.PIGMENT_BUCKET);
+                output.accept(ModBlocks.ALBUM);
             })
             .build();
 

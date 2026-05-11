@@ -84,6 +84,14 @@ public class ModBlocks {
     );
 
 
+    public static final Block ALBUM = register(
+            "album",
+            (props) -> new Album(CustomDirectionalBlock.builder(props, Album.DEFAULT_BOX).faceTowardsPlayer()),
+            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
+            true
+    );
+
+
     public static void initialize() {}
 
     @SuppressWarnings("SameParameterValue")
