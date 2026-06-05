@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "danylo-decor:block/flower_pot/potted_jungle_sapling",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "danylo-decor:block/flower_pot/potted_jungle_sapling"
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/flower_pot/potted_jungle_sapling",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/flower_pot/potted_jungle_sapling",
+      "y": 270
+    }
+  }
+}

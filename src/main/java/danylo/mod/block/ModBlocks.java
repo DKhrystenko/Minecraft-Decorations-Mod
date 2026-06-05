@@ -92,6 +92,126 @@ public class ModBlocks {
     );
 
 
+    public static final VoxelShape POTTED_FLOWER_BASKET_BOX = Block.box(2, 0, 0, 14, 8, 12);
+    @CutoutBlock public static final Block POTTED_FLOWER_BASKET = register(
+            "potted_flower_basket",
+            (props) -> CustomDirectionalBlock.builder(props, POTTED_FLOWER_BASKET_BOX).faceTowardsPlayer().build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion(),
+            true
+    );
+
+    public static final VoxelShape POTTED_SUNFLOWER_BOX = Block.box(4, 0, 1, 12, 13, 9);
+    @CutoutBlock public static final Block POTTED_SUNFLOWER = register(
+            "potted_sunflower",
+            (props) -> CustomDirectionalBlock.builder(props, POTTED_SUNFLOWER_BOX).faceTowardsPlayer().build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion(),
+            true
+    );
+
+    public static final VoxelShape POTTED_JUNGLE_SPROUT_BOX = Block.box(4, 0, 4, 12, 8, 12);
+    @CutoutBlock public static final Block POTTED_JUNGLE_SPROUT = register(
+            "potted_jungle_sprout",
+            (props) -> CustomDirectionalBlock.builder(props, POTTED_JUNGLE_SPROUT_BOX).faceTowardsPlayer().build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion(),
+            true
+    );
+
+    public static final VoxelShape POTTED_AZURE_BLUET_BOX = Block.box(4, 0, 1, 12, 8, 9);
+    @CutoutBlock public static final Block POTTED_AZURE_BLUET = register(
+            "potted_azure_bluet",
+            (props) -> CustomDirectionalBlock.builder(props, POTTED_AZURE_BLUET_BOX).faceTowardsPlayer().build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion(),
+            true
+    );
+
+    public static final VoxelShape POTTED_SAKURA_SPROUT_BOX = Block.box(4, 0, 4, 12, 6, 12);
+    @CutoutBlock public static final Block POTTED_SAKURA_SPROUT = register(
+            "potted_sakura_sprout",
+            (props) -> CustomDirectionalBlock.builder(props, POTTED_SAKURA_SPROUT_BOX).faceTowardsPlayer().build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion(),
+            true
+    );
+
+    public static final VoxelShape POTTED_MAPLE_SPROUT_BOX = Block.box(4, 0, 4, 12, 6, 12);
+    @CutoutBlock public static final Block POTTED_MAPLE_SPROUT = register(
+            "potted_maple_sprout",
+            (props) -> CustomDirectionalBlock.builder(props, POTTED_MAPLE_SPROUT_BOX).faceTowardsPlayer().build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion(),
+            true
+    );
+
+    public static final VoxelShape POTTED_SPROUT_BOX = Block.box(4, 0, 0, 12, 6, 8);
+    @CutoutBlock public static final Block POTTED_SPROUT = register(
+            "potted_sprout",
+            (props) -> CustomDirectionalBlock.builder(props, POTTED_SPROUT_BOX).faceTowardsPlayer().build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion(),
+            true
+    );
+
+    public static final VoxelShape POTTED_ALLIUM_BOX = Block.box(4, 0, 0, 12, 8, 8);
+    @CutoutBlock public static final Block POTTED_ALLIUM = register(
+            "potted_allium",
+            (props) -> CustomDirectionalBlock.builder(props, POTTED_ALLIUM_BOX).faceTowardsPlayer().build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion(),
+            true
+    );
+
+    public static final VoxelShape POTTED_FERN_BOX = Block.box(4, 0, 1, 12, 8, 9);
+    @CutoutBlock public static final Block POTTED_FERN = register(
+            "potted_fern",
+            (props) -> CustomDirectionalBlock.builder(props, POTTED_FERN_BOX).faceTowardsPlayer().build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion(),
+            true
+    );
+
+    public static final VoxelShape AZURE_BLUET_BOX = Block.box(0, 0, 0, 16, 4, 16);
+    @CutoutBlock public static final Block AZURE_BLUET = register(
+            "azure_bluet",
+            (props) -> CustomDirectionalBlock.builder(props, AZURE_BLUET_BOX).build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion().noCollision(),
+            true
+    );
+
+    public static final VoxelShape WHITE_TULIP_BOX = Block.box(0, 0, 0, 16, 4, 16);
+    @CutoutBlock public static final Block  WHITE_TULIP = register(
+            "white_tulip",
+            (props) -> CustomDirectionalBlock.builder(props, WHITE_TULIP_BOX).build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion().noCollision(),
+            true
+    );
+
+    public static final VoxelShape GOLD_TULIP_BOX = Block.box(0, 0, 0, 16, 4, 16);
+    @CutoutBlock public static final Block GOLD_TULIP = register(
+            "gold_tulip",
+            (props) -> CustomDirectionalBlock.builder(props, GOLD_TULIP_BOX).build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion().noCollision(),
+            true
+    );
+
+    public static final VoxelShape PINK_TULIP_BOX = Block.box(0, 0, 0, 16, 4, 16);
+    @CutoutBlock public static final Block PINK_TULIP = register(
+            "pink_tulip",
+            (props) -> CustomDirectionalBlock.builder(props, PINK_TULIP_BOX).build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion().noCollision(),
+            true
+    );
+
+    public static final VoxelShape RED_TULIP_BOX = Block.box(0, 0, 0, 16, 4, 16);
+    @CutoutBlock public static final Block RED_TULIP = register(
+            "red_tulip",
+            (props) -> CustomDirectionalBlock.builder(props, RED_TULIP_BOX).build(),
+            BlockBehaviour.Properties.of().sound(SoundType.GRASS).noOcclusion().noCollision(),
+            true
+    );
+
+
+
+
+
+
+
+
+
     public static void initialize() {}
 
     @SuppressWarnings("SameParameterValue")

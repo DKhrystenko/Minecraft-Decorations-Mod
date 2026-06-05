@@ -28,6 +28,20 @@ public class DecorModCreativeTab {
                 output.accept(ModBlocks.MOUNTED_MIRROR);
                 output.accept(ModBlocks.PIGMENT_BUCKET);
                 output.accept(ModBlocks.ALBUM);
+                output.accept(ModBlocks.POTTED_FLOWER_BASKET);
+                output.accept(ModBlocks.POTTED_SUNFLOWER);
+                output.accept(ModBlocks.POTTED_JUNGLE_SPROUT);
+                output.accept(ModBlocks.POTTED_AZURE_BLUET);
+                output.accept(ModBlocks.POTTED_SAKURA_SPROUT);
+                output.accept(ModBlocks.POTTED_MAPLE_SPROUT);
+                output.accept(ModBlocks.POTTED_SPROUT);
+                output.accept(ModBlocks.POTTED_ALLIUM);
+                output.accept(ModBlocks.POTTED_FERN);
+                output.accept(ModBlocks.AZURE_BLUET);
+                output.accept(ModBlocks.WHITE_TULIP);
+                output.accept(ModBlocks.GOLD_TULIP);
+                output.accept(ModBlocks.PINK_TULIP);
+                output.accept(ModBlocks.RED_TULIP);
             })
             .build();
 

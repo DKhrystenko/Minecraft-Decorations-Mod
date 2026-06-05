@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "danylo-decor:block/flower_pot/potted_bamboo",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "danylo-decor:block/flower_pot/potted_bamboo"
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/flower_pot/potted_bamboo",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/flower_pot/potted_bamboo",
+      "y": 270
+    }
+  }
+}

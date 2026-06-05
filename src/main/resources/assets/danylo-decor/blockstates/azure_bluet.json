@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "danylo-decor:block/plants/azure_bluet",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "danylo-decor:block/plants/azure_bluet"
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/plants/azure_bluet",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/plants/azure_bluet",
+      "y": 270
+    }
+  }
+}

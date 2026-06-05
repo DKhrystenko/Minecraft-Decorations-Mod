@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "danylo-decor:block/flower_pot/potted_lily_of_the_valley",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "danylo-decor:block/flower_pot/potted_lily_of_the_valley"
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/flower_pot/potted_lily_of_the_valley",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/flower_pot/potted_lily_of_the_valley",
+      "y": 270
+    }
+  }
+}

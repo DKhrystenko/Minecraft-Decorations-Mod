@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "danylo-decor:block/plants/pink_tulip",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "danylo-decor:block/plants/pink_tulip"
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/plants/pink_tulip",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/plants/pink_tulip",
+      "y": 270
+    }
+  }
+}

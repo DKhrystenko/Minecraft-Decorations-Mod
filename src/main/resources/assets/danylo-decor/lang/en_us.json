@@ -8,5 +8,18 @@
   "block.danylo-decor.easel_empty": "Empty Easel",
   "block.danylo-decor.mounted_mirror": "Mounted Mirror",
   "block.danylo-decor.pigment_bucket": "Pigment Bucket",
-  "block.danylo-decor.album": "Album"
+  "block.danylo-decor.album": "Album",
+  "block.danylo-decor.potted_sunflower": "Potted Sunflower",
+  "block.danylo-decor.potted_flower_basket": "Potted Flower Basket",
+  "block.danylo-decor.potted_jungle_sprout": "Potted Jungle Sprout",
+  "block.danylo-decor.potted_azure_bluet": "Potted Azure Bluet",
+  "block.danylo-decor.potted_sakura_sprout": "Potted Sakura Sprout",
+  "block.danylo-decor.potted_maple_sprout": "Potted Maple Sprout",
+  "block.danylo-decor.potted_sprout": "Potted Sprout",
+  "block.danylo-decor.potted_fern": "Potted Fern",
+  "block.danylo-decor.azure_bluet": "Azure Bluet",
+  "block.danylo-decor.white_tulip": "White Tulip",
+  "block.danylo-decor.gold_tulip": "Gold Tulip",
+  "block.danylo-decor.pink_tulip": "Pink Tulip",
+  "block.danylo-decor.red_tulip": "Red Tulip"
 }
