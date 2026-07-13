@@ -21,6 +21,8 @@ public class DecorMod implements ModInitializer {
 		ModBlocks.initialize();
 //		ModItems.initialize();
 
+		BackupCommand.register();
+
 		DecorModCreativeTab.registerCustomTab();
 	}
 }
