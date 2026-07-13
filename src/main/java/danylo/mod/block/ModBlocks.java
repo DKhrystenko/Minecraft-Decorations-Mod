@@ -43,14 +43,13 @@ public class ModBlocks {
             true
     );
 
-
+    public static final VoxelShape WALL_LAMP_BOX = Block.box(4, 7, 0, 13, 15, 7);
     public static final Block WALL_LAMP = register(
             "wall_lamp",
-            (props) -> new WallLamp(CustomDirectionalBlock.builder(props, WallLamp.DEFAULT_BOX).faceTowardsPlayer()),
-            BlockBehaviour.Properties.of().sound(SoundType.GLASS).noOcclusion().lightLevel(WallLamp::getLuminance),
+            (props) -> new ToggledLightBlock(CustomDirectionalBlock.builder(props, WALL_LAMP_BOX).faceTowardsPlayer()),
+            BlockBehaviour.Properties.of().sound(SoundType.GLASS).noOcclusion().lightLevel(ToggledLightBlock.luminance(12)),
             true
     );
-
 
     public static final VoxelShape EASEL_BOX = Block.box(0, 0, 0, 16, 32, 16);
     public static final Block EASEL_EMPTY = register(
@@ -207,7 +206,7 @@ public class ModBlocks {
 
 
     // Farmhouse Decorations
-    public static final VoxelShape ACOUSTIC_GUITAR_BOX = Block.box(4, 0.21, 6.904, 12, 18.962, 15.989);  // TODO: geometry extends outside 0-16, clamp/simplify by hand
+    public static final VoxelShape ACOUSTIC_GUITAR_BOX = Block.box(4, 0.21, 6.904, 12, 18.962, 15.989);
     public static final Block ACOUSTIC_GUITAR = register(
             "acoustic_guitar",
             (props) -> CustomDirectionalBlock.builder(props, ACOUSTIC_GUITAR_BOX).build(),
@@ -215,7 +214,7 @@ public class ModBlocks {
             true
     );
 
-    public static final VoxelShape ANCIENT_TV_BOX = Block.box(1, 0, 5.75, 15, 18.477, 15);  // TODO: geometry extends outside 0-16, clamp/simplify by hand
+    public static final VoxelShape ANCIENT_TV_BOX = Block.box(1, 0, 5.75, 15, 11, 15);
     public static final Block ANCIENT_TV = register(
             "ancient_tv",
             (props) -> CustomDirectionalBlock.builder(props, ANCIENT_TV_BOX).build(),
@@ -223,7 +222,7 @@ public class ModBlocks {
             true
     );
 
-    public static final VoxelShape ANCIENT_TV_WITH_LEGS_BOX = Block.box(1, 0, 5.75, 15, 23.477, 15);  // TODO: geometry extends outside 0-16, clamp/simplify by hand
+    public static final VoxelShape ANCIENT_TV_WITH_LEGS_BOX = Block.box(1, 0, 5.75, 15, 16, 15);
     public static final Block ANCIENT_TV_WITH_LEGS = register(
             "ancient_tv_with_legs",
             (props) -> CustomDirectionalBlock.builder(props, ANCIENT_TV_WITH_LEGS_BOX).build(),
@@ -231,7 +230,7 @@ public class ModBlocks {
             true
     );
 
-    public static final VoxelShape ANTIQUE_OVEN_BOX = Block.box(0, 0, 5.5, 16, 27.25, 16);  // TODO: geometry extends outside 0-16, clamp/simplify by hand
+    public static final VoxelShape ANTIQUE_OVEN_BOX = Block.box(0, 0, 5.5, 16, 27.25, 16);
     public static final Block ANTIQUE_OVEN = register(
             "antique_oven",
             (props) -> CustomDirectionalBlock.builder(props, ANTIQUE_OVEN_BOX).build(),
@@ -239,7 +238,7 @@ public class ModBlocks {
             true
     );
 
-    public static final VoxelShape BATHROOM_CABINET_BOX = Block.box(-0.75, 0, 0, 16.75, 31.75, 16);  // TODO: geometry extends outside 0-16, clamp/simplify by hand
+    public static final VoxelShape BATHROOM_CABINET_BOX = Block.box(-0.75, 0, 0, 16.75, 31.75, 16);
     public static final Block BATHROOM_CABINET = register(
             "bathroom_cabinet",
             (props) -> CustomDirectionalBlock.builder(props, BATHROOM_CABINET_BOX).build(),
@@ -255,7 +254,7 @@ public class ModBlocks {
             true
     );
 
-    public static final VoxelShape BATHROOM_SINK_BOX = Block.box(0, 0, 0, 16, 19.75, 16);  // TODO: geometry extends outside 0-16, clamp/simplify by hand
+    public static final VoxelShape BATHROOM_SINK_BOX = Block.box(0, 0, 0, 16, 7, 16);
     public static final Block BATHROOM_SINK = register(
             "bathroom_sink",
             (props) -> CustomDirectionalBlock.builder(props, BATHROOM_SINK_BOX).build(),
@@ -263,7 +262,7 @@ public class ModBlocks {
             true
     );
 
-    public static final VoxelShape BATHTUB_BOX = Block.box(-12, 0, 1, 28, 13.7, 15.5);  // TODO: geometry extends outside 0-16, clamp/simplify by hand
+    public static final VoxelShape BATHTUB_BOX = Block.box(-12, 0, 1, 28, 11, 15.5);
     public static final Block BATHTUB = register(
             "bathtub",
             (props) -> CustomDirectionalBlock.builder(props, BATHTUB_BOX).build(),
@@ -271,7 +270,7 @@ public class ModBlocks {
             true
     );
 
-    public static final VoxelShape BIG_BATHROOM_MIRROR_BOX = Block.box(-9, 4.5, 14.5, 25, 29, 16);  // TODO: geometry extends outside 0-16, clamp/simplify by hand
+    public static final VoxelShape BIG_BATHROOM_MIRROR_BOX = Block.box(-9, 4.5, 14.5, 25, 29, 16);
     public static final Block BIG_BATHROOM_MIRROR = register(
             "big_bathroom_mirror",
             (props) -> CustomDirectionalBlock.builder(props, BIG_BATHROOM_MIRROR_BOX).build(),
@@ -282,8 +281,8 @@ public class ModBlocks {
     public static final VoxelShape CHAINED_KEROSENE_LANTERN_BOX = Block.box(5.925, 5.25, 6, 10.075, 16, 10);
     public static final Block CHAINED_KEROSENE_LANTERN = register(
             "chained_kerosene_lantern",
-            (props) -> CustomDirectionalBlock.builder(props, CHAINED_KEROSENE_LANTERN_BOX).build(),
-            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
+            (props) -> new ToggledLightBlock(CustomDirectionalBlock.builder(props, CHAINED_KEROSENE_LANTERN_BOX)),
+            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().lightLevel(ToggledLightBlock.luminance(12)),
             true
     );
 
@@ -295,7 +294,7 @@ public class ModBlocks {
             true
     );
 
-    public static final VoxelShape COAT_HANGER_BOX = Block.box(1.25, -0.765, 1.25, 14.75, 31.25, 14.75);  // TODO: geometry extends outside 0-16, clamp/simplify by hand
+    public static final VoxelShape COAT_HANGER_BOX = Block.box(3, -0.765, 3, 13, 31.25, 13);
     public static final Block COAT_HANGER = register(
             "coat_hanger",
             (props) -> CustomDirectionalBlock.builder(props, COAT_HANGER_BOX).build(),
@@ -303,7 +302,7 @@ public class ModBlocks {
             true
     );
 
-    public static final VoxelShape COFFEE_TABLE_BOX = Block.box(-1, 0, -1, 17, 8, 17);  // TODO: geometry extends outside 0-16, clamp/simplify by hand
+    public static final VoxelShape COFFEE_TABLE_BOX = Block.box(-1, 0, -1, 17, 8, 17);
     public static final Block COFFEE_TABLE = register(
             "coffee_table",
             (props) -> CustomDirectionalBlock.builder(props, COFFEE_TABLE_BOX).build(),
@@ -394,8 +393,8 @@ public class ModBlocks {
     public static final VoxelShape KEROSENE_LANTERN_BOX = Block.box(5.925, 0, 6, 10.075, 7.75, 10);
     public static final Block KEROSENE_LANTERN = register(
             "kerosene_lantern",
-            (props) -> CustomDirectionalBlock.builder(props, KEROSENE_LANTERN_BOX).build(),
-            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
+            (props) -> new ToggledLightBlock(CustomDirectionalBlock.builder(props, KEROSENE_LANTERN_BOX)),
+            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().lightLevel(ToggledLightBlock.luminance(12)),
             true
     );
 
@@ -482,8 +481,8 @@ public class ModBlocks {
     public static final VoxelShape LAMP_BOX = Block.box(2.5, 0, 2.5, 13.5, 15.5, 13.5);
     public static final Block LAMP = register(
             "lamp",
-            (props) -> CustomDirectionalBlock.builder(props, LAMP_BOX).build(),
-            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
+            (props) -> new ToggledLightBlock(CustomDirectionalBlock.builder(props, LAMP_BOX)),
+            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().lightLevel(ToggledLightBlock.luminance(10)),
             true
     );
 
@@ -674,8 +673,8 @@ public class ModBlocks {
     public static final VoxelShape STANDING_LAMP_BOX = Block.box(3, -0.765, 3, 13, 32, 13);  // TODO: geometry extends outside 0-16, clamp/simplify by hand
     public static final Block STANDING_LAMP = register(
             "standing_lamp",
-            (props) -> CustomDirectionalBlock.builder(props, STANDING_LAMP_BOX).build(),
-            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
+            (props) -> new ToggledLightBlock(CustomDirectionalBlock.builder(props, STANDING_LAMP_BOX)),
+            BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion().lightLevel(ToggledLightBlock.luminance(13)),
             true
     );
 
@@ -743,16 +742,13 @@ public class ModBlocks {
             true
     );
 
-    public static final VoxelShape WORKBENCH_BOX = Block.box(-14, 0, 1.25, 14, 20, 16);  // TODO: geometry extends outside 0-16, clamp/simplify by hand
+    public static final VoxelShape WORKBENCH_BOX = Block.box(-14, 0, 1.25, 14, 20, 16);
     public static final Block WORKBENCH = register(
             "workbench",
             (props) -> CustomDirectionalBlock.builder(props, WORKBENCH_BOX).build(),
             BlockBehaviour.Properties.of().sound(SoundType.WOOD).noOcclusion(),
             true
     );
-
-
-
 
 
     public static void initialize() {}
