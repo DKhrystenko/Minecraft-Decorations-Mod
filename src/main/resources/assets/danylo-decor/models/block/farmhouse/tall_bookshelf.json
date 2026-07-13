@@ -1,0 +1,11 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/bookshelf",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/bookshelf-texture",
+    "particle": "danylo-decor:block/farmhouse/bookshelf-texture",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "1": "danylo-decor:block/farmhouse/bookshelf-texture",
+    "2": "danylo-decor:block/farmhouse/bookshelf-books-texture"
+  },
+  "render_type": "translucent"
+}

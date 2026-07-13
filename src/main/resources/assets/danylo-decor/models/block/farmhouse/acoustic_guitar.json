@@ -1,0 +1,9 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/acoustic-guitar",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/acoustic-guitar",
+    "particle": "danylo-decor:block/farmhouse/acoustic-guitar",
+    "0": "danylo-decor:block/farmhouse/acoustic-guitar"
+  },
+  "render_type": "solid"
+}

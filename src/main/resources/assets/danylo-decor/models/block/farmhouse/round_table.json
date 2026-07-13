@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/round-table",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/table-top",
+    "particle": "danylo-decor:block/farmhouse/table-top",
+    "1": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "2": "danylo-decor:block/farmhouse/table-top"
+  },
+  "render_type": "solid"
+}

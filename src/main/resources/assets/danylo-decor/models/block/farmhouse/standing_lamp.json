@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/standing-lamp",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/standing-lamp",
+    "particle": "danylo-decor:block/farmhouse/standing-lamp",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "1": "danylo-decor:block/farmhouse/standing-lamp"
+  },
+  "render_type": "solid"
+}

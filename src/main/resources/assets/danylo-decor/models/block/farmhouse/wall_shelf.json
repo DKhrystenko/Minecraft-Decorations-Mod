@@ -1,0 +1,20 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/stuff-wall-shelf-double",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "particle": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "1": "danylo-decor:block/farmhouse/drawers-hardware",
+    "2": "danylo-decor:block/farmhouse/book-red",
+    "3": "danylo-decor:block/farmhouse/book-purple",
+    "4": "danylo-decor:block/farmhouse/book-green",
+    "3_0": "danylo-decor:block/farmhouse/doniczkaigalezie",
+    "3_1": "danylo-decor:block/farmhouse/tinyleaves",
+    "5_0": "minecraft:block/cherry_log",
+    "5_1": "minecraft:block/bricks",
+    "6_0": "danylo-decor:block/farmhouse/wine-bottle-red",
+    "5_2": "minecraft:block/coarse_dirt",
+    "5_3": "minecraft:block/cherry_leaves"
+  },
+  "render_type": "translucent"
+}

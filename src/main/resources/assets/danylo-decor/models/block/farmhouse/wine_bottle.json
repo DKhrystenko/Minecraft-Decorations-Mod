@@ -1,0 +1,9 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/bottle-of-wine",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/wine-bottle",
+    "particle": "danylo-decor:block/farmhouse/wine-bottle",
+    "0": "danylo-decor:block/farmhouse/wine-bottle"
+  },
+  "render_type": "solid"
+}

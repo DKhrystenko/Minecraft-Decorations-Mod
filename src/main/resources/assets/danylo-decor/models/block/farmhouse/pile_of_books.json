@@ -1,0 +1,11 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/stuff-book_pile",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/book-green",
+    "particle": "danylo-decor:block/farmhouse/book-green",
+    "0": "danylo-decor:block/farmhouse/book-red",
+    "1": "danylo-decor:block/farmhouse/book-purple",
+    "2": "danylo-decor:block/farmhouse/book-green"
+  },
+  "render_type": "solid"
+}

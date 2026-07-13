@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/stuff-old-radiator",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/iron_block",
+    "particle": "danylo-decor:block/farmhouse/iron_block",
+    "0": "danylo-decor:block/farmhouse/iron_block",
+    "1": "danylo-decor:block/farmhouse/old-radiator-texture"
+  },
+  "render_type": "solid"
+}

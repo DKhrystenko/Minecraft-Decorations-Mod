@@ -1,0 +1,11 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/bathroom-sink",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/bathroom-sink",
+    "particle": "danylo-decor:block/farmhouse/bathroom-sink",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "1": "danylo-decor:block/farmhouse/stone_diorite_smooth",
+    "2": "danylo-decor:block/farmhouse/bathroom-sink"
+  },
+  "render_type": "solid"
+}

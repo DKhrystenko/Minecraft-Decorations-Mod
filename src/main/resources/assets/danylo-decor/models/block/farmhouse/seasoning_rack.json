@@ -1,0 +1,15 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/stuff-seasoning_rack",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/seasoning-jar",
+    "particle": "danylo-decor:block/farmhouse/seasoning-jar",
+    "0": "danylo-decor:block/farmhouse/seasoning-jar",
+    "2": "minecraft:block/stripped_dark_oak_log",
+    "3": "minecraft:block/brown_concrete_powder",
+    "4": "minecraft:block/green_concrete_powder",
+    "5": "minecraft:block/black_concrete_powder",
+    "6": "minecraft:block/orange_concrete_powder",
+    "7": "minecraft:block/white_concrete_powder"
+  },
+  "render_type": "translucent"
+}

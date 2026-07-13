@@ -1,0 +1,9 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/stuff-telephone",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/phone-texture",
+    "particle": "danylo-decor:block/farmhouse/phone-texture",
+    "0": "danylo-decor:block/farmhouse/phone-texture"
+  },
+  "render_type": "solid"
+}

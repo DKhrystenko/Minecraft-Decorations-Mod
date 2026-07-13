@@ -1,0 +1,9 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/wine-glass",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/wine-glass-texture",
+    "particle": "danylo-decor:block/farmhouse/wine-glass-texture",
+    "0": "danylo-decor:block/farmhouse/wine-glass-texture"
+  },
+  "render_type": "translucent"
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "danylo-decor:block/farmhouse/rug_1x_3"
+    },
+    "facing=east": {
+      "model": "danylo-decor:block/farmhouse/rug_1x_3",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/farmhouse/rug_1x_3",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/farmhouse/rug_1x_3",
+      "y": 270
+    }
+  }
+}

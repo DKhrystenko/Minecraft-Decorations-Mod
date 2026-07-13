@@ -1,0 +1,11 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/kitchen-antique-oven-decorated",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/kitchen-counters",
+    "particle": "danylo-decor:block/farmhouse/kitchen-counters",
+    "1": "danylo-decor:block/farmhouse/steel",
+    "2": "danylo-decor:block/farmhouse/gray-details",
+    "5_0": "danylo-decor:block/farmhouse/oven-texture"
+  },
+  "render_type": "solid"
+}

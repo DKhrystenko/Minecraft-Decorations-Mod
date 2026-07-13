@@ -1,0 +1,9 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/stuff-door_mat",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/door_mat",
+    "particle": "danylo-decor:block/farmhouse/door_mat",
+    "0": "danylo-decor:block/farmhouse/door_mat"
+  },
+  "render_type": "solid"
+}

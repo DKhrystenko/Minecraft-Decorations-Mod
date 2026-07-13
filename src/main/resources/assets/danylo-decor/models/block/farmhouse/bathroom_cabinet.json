@@ -1,0 +1,11 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/bathroom-cabinet",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/bathroom-cabinet-stuff",
+    "particle": "danylo-decor:block/farmhouse/bathroom-cabinet-stuff",
+    "0": "danylo-decor:block/farmhouse/glass_gray",
+    "1": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "2": "danylo-decor:block/farmhouse/bathroom-cabinet-stuff"
+  },
+  "render_type": "translucent"
+}

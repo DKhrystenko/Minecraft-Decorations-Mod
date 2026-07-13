@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/dresser",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/dresses-texture",
+    "particle": "danylo-decor:block/farmhouse/dresses-texture",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "1": "danylo-decor:block/farmhouse/dresses-texture"
+  },
+  "render_type": "solid"
+}

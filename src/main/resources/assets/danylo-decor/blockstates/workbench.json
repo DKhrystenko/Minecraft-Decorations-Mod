@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "danylo-decor:block/farmhouse/workbench"
+    },
+    "facing=east": {
+      "model": "danylo-decor:block/farmhouse/workbench",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/farmhouse/workbench",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/farmhouse/workbench",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/workbench",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/table-top-worn",
+    "particle": "danylo-decor:block/farmhouse/table-top-worn",
+    "1": "danylo-decor:block/farmhouse/table-top-worn",
+    "2": "danylo-decor:block/farmhouse/bench-vise-texture",
+    "3": "danylo-decor:block/farmhouse/toolbox-texture",
+    "4": "danylo-decor:block/farmhouse/box-of-screws-texture",
+    "5": "danylo-decor:block/farmhouse/table-top"
+  },
+  "render_type": "solid"
+}

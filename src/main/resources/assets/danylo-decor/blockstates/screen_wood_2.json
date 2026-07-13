@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "danylo-decor:block/farmhouse/screen_wood_2"
+    },
+    "facing=east": {
+      "model": "danylo-decor:block/farmhouse/screen_wood_2",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/farmhouse/screen_wood_2",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/farmhouse/screen_wood_2",
+      "y": 270
+    }
+  }
+}

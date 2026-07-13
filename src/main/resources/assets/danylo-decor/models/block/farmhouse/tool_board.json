@@ -1,0 +1,13 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/tool-wall",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/spanner-texture",
+    "particle": "danylo-decor:block/farmhouse/spanner-texture",
+    "0": "danylo-decor:block/farmhouse/hand-saw",
+    "1": "danylo-decor:block/farmhouse/tool-wall-texture",
+    "2": "danylo-decor:block/farmhouse/spanner-texture",
+    "4": "danylo-decor:block/farmhouse/screwdriver",
+    "5": "danylo-decor:block/farmhouse/table-top"
+  },
+  "render_type": "solid"
+}

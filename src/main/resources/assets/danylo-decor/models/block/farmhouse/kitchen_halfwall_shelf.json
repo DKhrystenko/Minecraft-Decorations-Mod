@@ -1,0 +1,9 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/kitchen-halfwall-shelf",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/kitchen-counters",
+    "particle": "danylo-decor:block/farmhouse/kitchen-counters",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood"
+  },
+  "render_type": "solid"
+}

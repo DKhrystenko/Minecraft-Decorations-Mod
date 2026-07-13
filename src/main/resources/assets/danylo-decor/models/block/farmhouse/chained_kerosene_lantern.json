@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/kerosene-lantern-chain",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/lantern-emisive",
+    "particle": "danylo-decor:block/farmhouse/lantern-emisive",
+    "2": "danylo-decor:block/farmhouse/lantern-texture",
+    "3": "danylo-decor:block/farmhouse/lantern-emisive"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/kitchen-wall-cabinet",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/kitchen-counters",
+    "particle": "danylo-decor:block/farmhouse/kitchen-counters",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "2": "danylo-decor:block/farmhouse/kitchen-counters"
+  },
+  "render_type": "solid"
+}

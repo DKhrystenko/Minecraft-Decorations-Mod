@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/piano-stool",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/piano-texture",
+    "particle": "danylo-decor:block/farmhouse/piano-texture",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "1": "danylo-decor:block/farmhouse/piano-texture"
+  },
+  "render_type": "solid"
+}

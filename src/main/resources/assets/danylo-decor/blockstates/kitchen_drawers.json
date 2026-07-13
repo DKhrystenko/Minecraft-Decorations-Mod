@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "danylo-decor:block/farmhouse/kitchen_drawers"
+    },
+    "facing=east": {
+      "model": "danylo-decor:block/farmhouse/kitchen_drawers",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/farmhouse/kitchen_drawers",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/farmhouse/kitchen_drawers",
+      "y": 270
+    }
+  }
+}

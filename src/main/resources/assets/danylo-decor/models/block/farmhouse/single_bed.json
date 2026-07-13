@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/bed-single",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/bed-texture",
+    "particle": "danylo-decor:block/farmhouse/bed-texture",
+    "1": "danylo-decor:block/farmhouse/bed-texture",
+    "2": "danylo-decor:block/farmhouse/smooth-farmhouse-wood"
+  },
+  "render_type": "solid"
+}

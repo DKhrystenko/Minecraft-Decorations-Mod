@@ -1,0 +1,9 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/kitchen-old-fridge",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/old-fridge",
+    "particle": "danylo-decor:block/farmhouse/old-fridge",
+    "4": "danylo-decor:block/farmhouse/old-fridge"
+  },
+  "render_type": "solid"
+}

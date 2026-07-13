@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "danylo-decor:block/farmhouse/radio"
+    },
+    "facing=east": {
+      "model": "danylo-decor:block/farmhouse/radio",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/farmhouse/radio",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/farmhouse/radio",
+      "y": 270
+    }
+  }
+}

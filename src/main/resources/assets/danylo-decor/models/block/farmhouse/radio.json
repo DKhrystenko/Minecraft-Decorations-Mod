@@ -1,0 +1,11 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/stuff-radio",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/radio-panel",
+    "particle": "danylo-decor:block/farmhouse/radio-panel",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "1": "danylo-decor:block/farmhouse/radio-texture",
+    "2": "danylo-decor:block/farmhouse/radio-panel"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/stuff-desk",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "particle": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "1": "danylo-decor:block/farmhouse/desk_details"
+  },
+  "render_type": "solid"
+}

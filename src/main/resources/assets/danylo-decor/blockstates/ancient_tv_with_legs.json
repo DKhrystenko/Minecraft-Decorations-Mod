@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "danylo-decor:block/farmhouse/ancient_tv_with_legs"
+    },
+    "facing=east": {
+      "model": "danylo-decor:block/farmhouse/ancient_tv_with_legs",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/farmhouse/ancient_tv_with_legs",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/farmhouse/ancient_tv_with_legs",
+      "y": 270
+    }
+  }
+}

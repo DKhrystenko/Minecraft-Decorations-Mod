@@ -1,0 +1,11 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/l.room-ancient_tv-nolegs",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/ancient_tv-screen_off",
+    "particle": "danylo-decor:block/farmhouse/ancient_tv-screen_off",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "2": "danylo-decor:block/farmhouse/ancient_tv-details",
+    "3": "danylo-decor:block/farmhouse/ancient_tv-screen_off"
+  },
+  "render_type": "solid"
+}

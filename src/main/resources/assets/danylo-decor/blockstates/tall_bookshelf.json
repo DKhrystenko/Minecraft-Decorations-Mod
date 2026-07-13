@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "danylo-decor:block/farmhouse/tall_bookshelf"
+    },
+    "facing=east": {
+      "model": "danylo-decor:block/farmhouse/tall_bookshelf",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/farmhouse/tall_bookshelf",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/farmhouse/tall_bookshelf",
+      "y": 270
+    }
+  }
+}

@@ -18,6 +18,9 @@
 		"main": [
 			"danylo.mod.DecorMod"
 		],
+		"client": [
+			"danylo.mod.DecorModClient"
+		],
 		"fabric-datagen": [
 			"danylo.mod.DecorModDataGenerator"
 		]

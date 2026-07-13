@@ -1,0 +1,9 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/dining_chair",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "particle": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood"
+  },
+  "render_type": "solid"
+}

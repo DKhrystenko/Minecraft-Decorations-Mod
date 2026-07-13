@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/bathroom-mirror-big",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/mirror-big-texture",
+    "particle": "danylo-decor:block/farmhouse/mirror-big-texture",
+    "0": "danylo-decor:block/farmhouse/smooth-farmhouse-wood",
+    "1": "danylo-decor:block/farmhouse/mirror-big-texture"
+  },
+  "render_type": "solid"
+}

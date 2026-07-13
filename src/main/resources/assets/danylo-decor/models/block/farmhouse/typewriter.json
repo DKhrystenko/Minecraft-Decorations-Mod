@@ -1,0 +1,9 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/stuff-typewriter",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/typewriter",
+    "particle": "danylo-decor:block/farmhouse/typewriter",
+    "0": "danylo-decor:block/farmhouse/typewriter"
+  },
+  "render_type": "solid"
+}

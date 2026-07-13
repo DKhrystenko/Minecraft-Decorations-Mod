@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/nightstandl",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/nightstand-texture",
+    "particle": "danylo-decor:block/farmhouse/nightstand-texture",
+    "1": "danylo-decor:block/farmhouse/nightstand-texture",
+    "2": "danylo-decor:block/farmhouse/smooth-farmhouse-wood"
+  },
+  "render_type": "solid"
+}

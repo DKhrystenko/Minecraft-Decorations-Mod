@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "danylo-decor:block/farmhouse/bathroom_sink"
+    },
+    "facing=east": {
+      "model": "danylo-decor:block/farmhouse/bathroom_sink",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/farmhouse/bathroom_sink",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/farmhouse/bathroom_sink",
+      "y": 270
+    }
+  }
+}

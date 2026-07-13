@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "danylo-decor:block/farmhouse/acoustic_guitar"
+    },
+    "facing=east": {
+      "model": "danylo-decor:block/farmhouse/acoustic_guitar",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "danylo-decor:block/farmhouse/acoustic_guitar",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "danylo-decor:block/farmhouse/acoustic_guitar",
+      "y": 270
+    }
+  }
+}

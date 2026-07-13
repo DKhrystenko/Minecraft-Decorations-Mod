@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/bathroom-towel-hanger",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/bathroom-towel-hanger",
+    "particle": "danylo-decor:block/farmhouse/bathroom-towel-hanger",
+    "0": "danylo-decor:block/farmhouse/bathroom-towel-hanger",
+    "missing": "danylo-decor:block/farmhouse/"
+  },
+  "render_type": "solid"
+}

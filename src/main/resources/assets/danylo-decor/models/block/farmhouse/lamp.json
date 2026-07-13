@@ -1,0 +1,10 @@
+{
+  "parent": "danylo-decor:farmhouse_custom/stuff-art-noveau-lamp",
+  "textures": {
+    "all": "danylo-decor:block/farmhouse/stripped_mangrove_log_side",
+    "particle": "danylo-decor:block/farmhouse/stripped_mangrove_log_side",
+    "0": "danylo-decor:block/farmhouse/stripped_mangrove_log_side",
+    "1": "danylo-decor:block/farmhouse/lamp-shade-emissive"
+  },
+  "render_type": "solid"
+}
