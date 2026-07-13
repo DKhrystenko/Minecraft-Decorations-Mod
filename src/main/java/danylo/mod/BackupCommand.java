@@ -13,6 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 
@@ -30,60 +31,75 @@ public class BackupCommand {
         CommandSourceStack source = context.getSource();
         MinecraftServer server = source.getServer();
 
-        // FORCE SAVE: write everything from RAM to disk and pause autosave
+        // Force save: loads data from RAM to disk and disables autosave
         server.saveEverything(true, true, true);
         server.setAutoSave(false);
 
-        source.sendSuccess(() -> Component.literal("Starting backup..."), true);
+        String formattedDate = LocalDateTime.now()
+                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm"));
 
-        LocalDateTime dateTimeObj = LocalDateTime.now();
-        DateTimeFormatter formatterObj  = DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm");
-        String formattedDate = dateTimeObj.format(formatterObj);
+        // Linux only, saves /home/USER/MinecraftServer/world folder to /home/USER/MinecraftBackups/backup_TIME folder
+        // In the future config file can be used for custom directories(not hardcoded)
+        String userHome = System.getProperty("user.home");
+        Path folderToCopy = Path.of(userHome, "MinecraftServer/world");
+        Path backupRoot = Path.of(userHome, "MinecraftBackups");
+        Path folderDestination = backupRoot.resolve("backup_" + formattedDate);
 
-        Path folderToCopy = Path.of("C:\\Users\\yaditrc\\Desktop\\danylo-decor\\run");
-        Path folderDestination = Path.of("D:\\backup_" + formattedDate); // backup_{YEAR}-{MONTH}-{DAY}_{HOUR}-{MINUTE}
-
-        try {
-            try {
-                Files.createDirectory(folderDestination);
-            } catch (IOException e) {
-                source.sendFailure(Component.literal("§cFailed to create folder: " + e.getMessage()));
-                return 0;
-            }
-
-            try {
-                source.sendSuccess(() -> Component.literal("Copying files... Wait"), true);
-                copyDirectory(folderToCopy, folderDestination);
-                source.sendSuccess(() -> Component.literal("Backup done! Saved to: " + folderDestination), true);
-            } catch  (IOException e) {
-                source.sendFailure(Component.literal("§cFailed to copy world: " + e.getMessage()));
-                return 0;
-            }
-
-            source.sendSuccess(() -> Component.literal("Backup successful."), true);
-            return 1;
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        } finally {
-            // MUST BE EXECUTED
+        // Check source exists
+        if (!Files.exists(folderToCopy) || !Files.isDirectory(folderToCopy)) {
+            source.sendFailure(Component.literal("§cERROR: Source folder does not exist: " + folderToCopy));
+            // CRITICAL: Resume autosave before returning
             server.setAutoSave(true);
             server.saveEverything(true, true, true);
+            return 0;
         }
+
+        source.sendSuccess(() -> Component.literal("§eBackup started... Wait..."), false);
+
+        // Run the COPY in the background (ASYNC)
+        CompletableFuture.runAsync(() -> {
+            try {
+                Files.createDirectories(folderDestination);
+                copyDirectory(folderToCopy, folderDestination);
+
+                // Send success message on the main thread
+                server.execute(() -> {
+                    source.sendSuccess(() ->
+                                    Component.literal("§aBackup done! Saved to: " + folderDestination.resolve("world")),
+                            true
+                    );
+                });
+
+            } catch (IOException e) {
+                // Send error message on the main thread
+                server.execute(() -> {
+                    source.sendFailure(Component.literal("§cBackup failed: " + e.getMessage()));
+                });
+                e.printStackTrace(); // Log to RPi5 console
+            } finally {
+                // Resume autosave in the background thread's finally block
+                server.execute(() -> {
+                    server.setAutoSave(true);
+                    server.saveEverything(true, true, true);
+                    source.sendSuccess(() -> Component.literal("§7Autosave resumed."), false);
+                });
+            }
+        });
+
+        // Command returns immediately (server stays responsive)
+        return 1;
     }
 
 
     private static void copyDirectory(Path source, Path dest) throws IOException {
-        // 1. Extract the source folder's name (e.g., "run")
         Path sourceName = source.getFileName();
-//        if (sourceName == null) {
-//            throw new IOException("Source path does not have a valid folder name: " + source);
-//        }
+        if (sourceName == null) {
+            throw new IOException("Source path does not have a valid folder name: " + source);
+        }
 
-        // 2. Build the final target: D:\backup_time\run
         Path target = dest.resolve(sourceName);
 
-        // 3. Walk through every file and subfolder in the source
+        // Walk through every file and subfolder in the source
         try (Stream<Path> stream = Files.walk(source)) {
             for (Path path : stream.toList()) { // Use toList() to avoid stream issues
 
@@ -93,7 +109,6 @@ public class BackupCommand {
 
                 // Calculate the relative path from the source (e.g., "world/level.dat")
                 Path relativePath = source.relativize(path);
-                // Build the destination path (e.g., D:\backup_time\run\world\level.dat)
                 Path destinationPath = target.resolve(relativePath);
 
                 if (Files.isDirectory(path)) {
