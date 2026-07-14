@@ -1,5 +1,6 @@
 package danylo.mod;
 
+import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.commands.CommandSourceStack;
@@ -30,9 +31,16 @@ public class BackupCommand {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             dispatcher.register(Commands.literal("backup")
                     .requires(source -> source.hasPermission(3))
+                    // SUBCOMMAND: /backup list
                     .then(Commands.literal("list")
-                            .executes(BackupCommand::runListSubcommand))
-                    .executes(BackupCommand::runBackup));
+                            .then(Commands.argument("listCount", IntegerArgumentType.integer(1))
+                                    .executes((context) -> runListSubcommand(context, IntegerArgumentType.getInteger(context, "listCount")))
+                            )
+                            .executes((context) -> runListSubcommand(context, 10))
+                    )
+
+                    .executes(BackupCommand::runBackup)
+            );
         });
     }
 
@@ -98,10 +106,8 @@ public class BackupCommand {
         return 1;
     }
 
-    /**
-    Prints last 10 backup folders
-     **/
-    private static int runListSubcommand(CommandContext<CommandSourceStack> context) {
+
+    private static int runListSubcommand(CommandContext<CommandSourceStack> context, int listCount) {
         CommandSourceStack source = context.getSource();
 
         // Check if the backups folder exists
@@ -126,12 +132,12 @@ public class BackupCommand {
                     return 0;
                 }
 
-                // Send a header to the player
-                source.sendSuccess(() -> Component.literal("§6=== Available Backups (" + backups.size() + ") ==="), false);
-
-
-                // Print last backups, if total is more than 10, only show most recent 10
-                int backupsSize = Math.min(backups.size(), 10);
+                // Print last backups,
+                int backupsSize = Math.min(backups.size(), listCount);
+                source.sendSuccess(() ->
+                                Component.literal("§6=== Showing " + backupsSize + " of " + backups.size() + " most recent backups ==="),
+                        false
+                );
 
                 for (int i = 0; i < backupsSize; i++) {
                     String backupName = backups.get(i);
@@ -149,6 +155,7 @@ public class BackupCommand {
             return 0;
         }
     }
+
 
 
     private static void copyDirectory(Path source, Path dest) throws IOException {
