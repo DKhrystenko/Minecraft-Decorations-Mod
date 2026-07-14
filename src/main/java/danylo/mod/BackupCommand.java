@@ -6,6 +6,8 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,19 +15,27 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 
 public class BackupCommand {
+    private static final String userHome = System.getProperty("user.home"); //  /home/USER/
+    private static final Path backupRoot = Path.of(userHome, "MinecraftBackups");  //  /home/USER/MinecraftBackups/
+    private static final Logger LOGGER = LoggerFactory.getLogger(BackupCommand.class);
+
 
     public static void register() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             dispatcher.register(Commands.literal("backup")
                     .requires(source -> source.hasPermission(3))
+                    .then(Commands.literal("list")
+                            .executes(BackupCommand::runListSubcommand))
                     .executes(BackupCommand::runBackup));
         });
     }
+
 
     private static int runBackup(CommandContext<CommandSourceStack> context) {
         CommandSourceStack source = context.getSource();
@@ -38,11 +48,9 @@ public class BackupCommand {
         String formattedDate = LocalDateTime.now()
                 .format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm"));
 
-        // Linux only, saves /home/USER/MinecraftServer/world folder to /home/USER/MinecraftBackups/backup_TIME folder
+        // Saves /home/USER/MinecraftServer/world folder to /home/USER/MinecraftBackups/backup_TIME folder
         // In the future config file can be used for custom directories(not hardcoded)
-        String userHome = System.getProperty("user.home");
         Path folderToCopy = Path.of(userHome, "MinecraftServer/world");
-        Path backupRoot = Path.of(userHome, "MinecraftBackups");
         Path folderDestination = backupRoot.resolve("backup_" + formattedDate);
 
         // Check source exists
@@ -65,7 +73,7 @@ public class BackupCommand {
                 // Send success message on the main thread
                 server.execute(() -> {
                     source.sendSuccess(() ->
-                                    Component.literal("§aBackup done! Saved to: " + folderDestination.resolve("world")),
+                                    Component.literal("§aBackup done! Saved to: " + folderDestination),
                             true
                     );
                 });
@@ -75,7 +83,7 @@ public class BackupCommand {
                 server.execute(() -> {
                     source.sendFailure(Component.literal("§cBackup failed: " + e.getMessage()));
                 });
-                e.printStackTrace(); // Log to RPi5 console
+                LOGGER.error("Backup failed while copying files", e);
             } finally {
                 // Resume autosave in the background thread's finally block
                 server.execute(() -> {
@@ -88,6 +96,58 @@ public class BackupCommand {
 
         // Command returns immediately (server stays responsive)
         return 1;
+    }
+
+    /**
+    Prints last 10 backup folders
+     **/
+    private static int runListSubcommand(CommandContext<CommandSourceStack> context) {
+        CommandSourceStack source = context.getSource();
+
+        // Check if the backups folder exists
+        if (!Files.exists(backupRoot) || !Files.isDirectory(backupRoot)) {
+            source.sendFailure(Component.literal("§cNo backups found. Run /backup to create your first one."));
+            return 0;
+        }
+
+        try {
+            // List all entries (files and folders) in the backup root
+            try (Stream<Path> stream = Files.list(backupRoot)) {
+                // Filter to only directories (your timestamped backups)
+                var backups = stream
+                        .filter(Files::isDirectory)
+                        .map(Path::getFileName) // Get just the folder name (e.g., "backup_2026-07-13_20-56")
+                        .map(Path::toString)
+                        .sorted(Comparator.reverseOrder()) // Sort alphabetically (recent first)
+                        .toList();
+
+                if (backups.isEmpty()) {
+                    source.sendFailure(Component.literal("§cNo backups found. Run /backup to create your first one."));
+                    return 0;
+                }
+
+                // Send a header to the player
+                source.sendSuccess(() -> Component.literal("§6=== Available Backups (" + backups.size() + ") ==="), false);
+
+
+                // Print last backups, if total is more than 10, only show most recent 10
+                int backupsSize = Math.min(backups.size(), 10);
+
+                for (int i = 0; i < backupsSize; i++) {
+                    String backupName = backups.get(i);
+                    String displayText = "§a" + (i + 1) + ". " + backupName;
+
+                    source.sendSuccess(() -> Component.literal(displayText), false);
+                }
+
+                return 1;
+            }
+
+        } catch (IOException e) {
+            source.sendFailure(Component.literal("§cFailed to list backups: " + e.getMessage()));
+            LOGGER.error("Couldn't list backups", e);
+            return 0;
+        }
     }
 
 
